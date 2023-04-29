@@ -1,4 +1,8 @@
 import { Component } from "react";
+// import { useId } from 'react';
+// import { nanoid } from "nanoid";
+
+
 
 export class App extends Component {
 	state = {
@@ -15,6 +19,8 @@ export class App extends Component {
 
 
 	render() {
+		const userId = useId();
+
 		return (
 			<div
 				style={{
@@ -26,7 +32,7 @@ export class App extends Component {
 					color: '#010101'
 				}}
 			>
-				React homework template
+				{userId}
 			</div>
 		);
 	}
