@@ -1,38 +1,26 @@
 import { Component } from "react";
-// import { useId } from 'react';
-// import { nanoid } from "nanoid";
+import { ContactForm } from "./ContactForm/ContactForm";
+// import { Section } from "./Section/Section";
+import css from '../components/wrapper/wrapper.module.css'
 
 
 
 export class App extends Component {
-	state = {
-		contacts: [],
-		name: ''
-	}
 
 	// state = {
 	// 	contacts: [],
 	// 	filter: ''
 	// }
 
-
-
-
 	render() {
-		const userId = useId();
 
 		return (
-			<div
-				style={{
-					height: '100vh',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					fontSize: 40,
-					color: '#010101'
-				}}
-			>
-				{userId}
+			<div className={css.phonebook}>
+				<h1>Phonebook</h1>
+					<ContactForm />
+				<h2>Contacts</h2>
+				{/* <Filter /> */}
+				{/* <ContactList /> */}
 			</div>
 		);
 	}
