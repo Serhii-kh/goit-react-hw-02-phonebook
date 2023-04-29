@@ -6,6 +6,11 @@ export class App extends Component {
 		name: ''
 	}
 
+	// state = {
+	// 	contacts: [],
+	// 	filter: ''
+	// }
+
 
 
 
