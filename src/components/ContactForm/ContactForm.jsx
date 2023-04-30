@@ -58,7 +58,7 @@ export class ContactForm extends Component {
 							required
 						/>
 					</label>
-					<button type="submit">Add contact</button>
+					<button type="submit" className={css.submitBtn}>Add contact</button>
 				</form>
 
 
