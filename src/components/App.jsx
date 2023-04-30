@@ -26,15 +26,14 @@ export class App extends Component {
 			id: shortid.generate(),
 		}
 
-		contacts.forEach(contact => {
-			if (contact.name === name) {
-				alert(`${name} is allredy in contacts!`)
-			}
-		});
-
-		this.setState(prevState => ({
-			contacts: [...prevState.contacts, contact]
-		}))
+		if (contacts.find(
+			contact => contact.name.toLowerCase() === name.toLowerCase()
+		)) { alert(`${name} is already in contacts!`) }
+		else {
+			this.setState(prevState => ({
+				contacts: [...prevState.contacts, contact]
+			}))
+		}
 	}
 
 	deleteContact = (contactId) => {
@@ -69,7 +68,7 @@ export class App extends Component {
 				<ContactForm onFormSubmit={this.addContact} contacts={contacts} />
 				<h2>Contacts</h2>
 				<Filter value={filter} onChange={this.changeFilter} />
-				<ContactsList contacts={filteredContacts} onDeleteContact={ this.deleteContact} />
+				<ContactsList contacts={filteredContacts} onDeleteContact={this.deleteContact} />
 			</div>
 		);
 	}
