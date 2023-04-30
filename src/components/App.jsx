@@ -9,7 +9,7 @@ import css from '../components/wrapper/wrapper.module.css';
 export class App extends Component {
 	state = {
 		contacts: [
-			
+
 		],
 
 		filter: ''
@@ -25,10 +25,10 @@ export class App extends Component {
 
 		contacts.forEach(contact => {
 			if (contact.name === name) {
-				alert(`${name} is allredy in contacts`)
+				alert(`${name} is allredy in contacts!`)
 			}
 		});
-
+		
 		this.setState(prevState => ({
 			contacts: [...prevState.contacts, contact]
 		}))
@@ -40,19 +40,19 @@ export class App extends Component {
 		this.setState({
 			filter: value
 		})
-
-		// let filteredContacts = [];
-		// contacts.filter
-		//  (contact => contact.name.includes(filter)? filteredContacts.push(contact) : continue)
-
 	}
 
+	getFilteredContacts = () => {
+		const { contacts, filter } = this.state;
+		const normalizedFilter = filter.toLowerCase();
+
+		return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter))
+	}
 
 
 	render() {
 		const { contacts, filter } = this.state;
-		const normalizedFilter = filter.toLowerCase();
-		const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter))
+		const filteredContacts = this.getFilteredContacts()
 
 		return (
 			<div className={css.phonebook}>
