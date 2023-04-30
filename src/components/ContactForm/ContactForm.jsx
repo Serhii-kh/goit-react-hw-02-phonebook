@@ -1,5 +1,7 @@
 import { Component } from "react";
-import css from '../ContactForm/ContactForm.module.css'
+import css from '../ContactForm/ContactForm.module.css';
+import PropTypes from 'prop-types';
+
 
 export class ContactForm extends Component {
 	state = {
@@ -30,7 +32,6 @@ export class ContactForm extends Component {
 		})
 	}
 
-
 	render() {
 		return (
 			<>
@@ -60,11 +61,12 @@ export class ContactForm extends Component {
 					</label>
 					<button type="submit" className={css.submitBtn}>Add contact</button>
 				</form>
-
-
-
 			</>
 		)
 	}
+}
 
+
+ContactForm.propTypes = {
+	onFormSubmit: PropTypes.func.isRequired,
 }
