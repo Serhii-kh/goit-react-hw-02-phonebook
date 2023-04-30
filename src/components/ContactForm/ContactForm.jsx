@@ -9,7 +9,7 @@ export class ContactForm extends Component {
 
 	handleChange = e => {
 		const { name, value } = e.currentTarget;
-		
+
 		this.setState(
 			{ [name]: value },
 		)
@@ -17,12 +17,11 @@ export class ContactForm extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { name, number } = this.state
+		const { name, number } = this.state;
 
-		this.props.onFormSubmit(name, number)
+		this.props.onFormSubmit(name, number);
 		this.reset()
 	}
-
 
 	reset = () => {
 		this.setState({
@@ -35,7 +34,7 @@ export class ContactForm extends Component {
 	render() {
 		return (
 			<>
-				<form className={css.contactForm}
+				<form className={css.ContactForm}
 					onSubmit={this.handleSubmit}>
 					<label>Name
 						<input
@@ -61,7 +60,7 @@ export class ContactForm extends Component {
 					</label>
 					<button type="submit">Add contact</button>
 				</form>
-				
+
 
 
 			</>

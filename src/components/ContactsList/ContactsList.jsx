@@ -7,7 +7,8 @@ export const ContactsList = ({ contacts }) =>
 		{
 			contacts.map(({ name, number, id }) =>
 			(
-				<ContactsListItem key={id} name={name} number={number} />)
+				<ContactsListItem key={id} name={name} number={number} />
+			)
 			)}
 	</ul>
 )

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
 import { ContactsList } from "./ContactsList/ContactsList";
+import { Filter } from "./Filter/Filter";
 import shortid from "shortid";
 import css from '../components/wrapper/wrapper.module.css';
 // import css from '../components/ContactsList/ContactsList.module.css';
@@ -8,14 +9,9 @@ import css from '../components/wrapper/wrapper.module.css';
 
 
 export class App extends Component {
-	// state = {
-	// 	contacts: [],
-	// 	filter: ''
-	// }
-
 	state = {
 		contacts: [],
-
+		filter: ''
 	}
 
 	addContact = (name, number) => {
@@ -28,10 +24,15 @@ export class App extends Component {
 		this.setState(prevState => ({
 			contacts: [...prevState.contacts, contact]
 		}))
-		console.log(name)
-		console.log(number)
-
 	}
+
+	onFilterChange = (filter) => {
+		this.setState({
+			filter,
+		})
+	}
+
+
 
 	render() {
 		const { contacts } = this.state;
@@ -41,8 +42,8 @@ export class App extends Component {
 				<h1>Phonebook</h1>
 				<ContactForm onFormSubmit={this.addContact} contacts={contacts} />
 				<h2>Contacts</h2>
-		
-				{/* <Filter /> */}
+
+				<Filter onFilterChange={ this.onFilterChange} />
 
 				<ContactsList contacts={contacts} />
 			</div>
