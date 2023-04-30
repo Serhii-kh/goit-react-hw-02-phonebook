@@ -1,8 +1,7 @@
-// import shortid from "shortid"
-
+import css from '../ContactsListItem/ContactsListItem.module.css'
 
 export const ContactsListItem = ({ name, number}) => (
-	<li>
+	<li className={css.ContactsListItem}>
 		<p>
 			{name}: {number}
 		</p>

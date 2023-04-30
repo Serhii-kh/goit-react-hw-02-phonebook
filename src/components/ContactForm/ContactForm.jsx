@@ -1,6 +1,5 @@
 import { Component } from "react";
 import css from '../ContactForm/ContactForm.module.css'
-// import shortid from "shortid";
 
 export class ContactForm extends Component {
 	state = {
@@ -8,9 +7,9 @@ export class ContactForm extends Component {
 		number: '',
 	}
 
-
 	handleChange = e => {
 		const { name, value } = e.currentTarget;
+		
 		this.setState(
 			{ [name]: value },
 		)

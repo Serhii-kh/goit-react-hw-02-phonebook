@@ -35,24 +35,15 @@ export class App extends Component {
 
 	render() {
 		const { contacts } = this.state;
-		// console.log(contacts)
 
 		return (
 			<div className={css.phonebook}>
 				<h1>Phonebook</h1>
 				<ContactForm onFormSubmit={this.addContact} contacts={contacts} />
 				<h2>Contacts</h2>
-				{/* <ul>
-					{
-						contacts.map(({ name, number }) =>
-							<li key={shortid.generate()}>
-								<p>
-									{name}: {number}
-								</p>
-							</li>
-						)}
-				</ul> */}
+		
 				{/* <Filter /> */}
+
 				<ContactsList contacts={contacts} />
 			</div>
 		);
