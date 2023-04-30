@@ -8,7 +8,7 @@ export const ContactsListItem  = ({name, number}) =>
 			<p>
 				{name}: {number}
 			</p>
-			<button type='button'>Delete</button>
+			{/* <button type='button'>Delete</button> */}
 		</li>)
 
 // onClick = { handleDeleteContact }
